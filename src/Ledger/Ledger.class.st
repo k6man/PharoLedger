@@ -21,10 +21,17 @@ Ledger >> balance [
 ]
 
 { #category : #api }
+Ledger >> cleared [
+	"comment stating purpose of message"
+
+	^ self cmd: 'cleared'
+]
+
+{ #category : #api }
 Ledger >> cmd: cmd [
 	"comment stating purpose of message"
 	| my_cmd |
-	my_cmd := (self ledgerPath ) , ' --pedantic -f ', (self dataPath ), '/main.txt ', cmd.
+	my_cmd := (self ledgerPath ) , ' --pedantic -f ', (self dataPath ), '\main.ledger ', cmd.
 	Transcript show: my_cmd ; cr. 
 	^ LibC resultOfCommand: my_cmd.
 ]
@@ -43,5 +50,33 @@ Ledger >> dataPath: anObject [
 Ledger >> ledgerPath [
 	"comment stating purpose of message"
 
-	^ 'ledger_3.1.2_win_bin\ledger.exe'
+	^ 'ledger_3.1.3_win_bin\ledger.exe'
+]
+
+{ #category : #api }
+Ledger >> monthlyRegister [
+	"comment stating purpose of message"
+
+	^ self cmd: 'register'
+]
+
+{ #category : #api }
+Ledger >> monthlyRegister: aCount [
+	"comment stating purpose of message"
+
+	^ self cmd: 'register', ' ',aCount.
+]
+
+{ #category : #api }
+Ledger >> register [
+	"comment stating purpose of message"
+
+	^ self cmd: 'register'
+]
+
+{ #category : #api }
+Ledger >> register: aCount [
+	"comment stating purpose of message"
+
+	^ self cmd: 'register', ' ',aCount.
 ]
