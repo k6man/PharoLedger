@@ -11,7 +11,7 @@ BaselineOfLedger >> baseline: spec [
 		for: #common
 		do: [
 			spec package: 'Ledger' with: [ spec requires: #('DataFrame') ];
-			     baseline: 'DataFrame' with: [ spec repository: 'github://PolyMathOrg/DataFrame/src' ].
+			     baseline: 'DataFrame' with: [ spec repository: 'github://PolyMathOrg/DataFrame:v2.0/src' ].
 		]
 	
 ]
